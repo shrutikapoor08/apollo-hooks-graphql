@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-export const singleActor = gql`
+export const GET_SONGS = gql`
   query albums($actor: String) {
     songs(where: { actor: $actor }) {
       name
