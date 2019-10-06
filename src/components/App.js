@@ -1,5 +1,5 @@
 import React, { useContext, useReducer } from "react";
-import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Context from '../context';
 import reducer from '../reducer'
 
