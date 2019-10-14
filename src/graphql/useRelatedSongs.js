@@ -1,6 +1,5 @@
 import { ApolloClient } from 'apollo-client'
 import { useQuery } from '@apollo/react-hooks';
-import { GET_SONGS } from "./queries";
 import gql from "graphql-tag";
 import { HttpLink } from "apollo-link-http/lib/index";
 import { InMemoryCache } from "apollo-cache-inmemory/lib/index";
@@ -25,12 +24,6 @@ query getRelatedSongs($name: String!)  {
     name
     album
     url
-    artist {
-      id
-      name
-      url
-      genre
-    }
   }
 }
 `;

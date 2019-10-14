@@ -1,4 +1,5 @@
 import Delete from './Delete';
+import More from './More';
 
 import React, { useContext } from "react";
 import { useMutation } from '@apollo/react-hooks';
@@ -7,11 +8,10 @@ import Context from '../context';
 import useRelatedSongs from "../graphql/useRelatedSongs";
 
 const SongItem = ({ song }) => {
-    const test = useRelatedSongs(song.artist);
-    console.log(test);
-
-
+  const { data, error, loading } = useRelatedSongs(song.artist);
   const [deleteSong] = useMutation(DELETE_SONG);
+  if (error) return ( <div> Something went wrong </div>);
+
   const { dispatch } = useContext(Context);
 
   const deleteMutation = () => {
@@ -34,6 +34,7 @@ const SongItem = ({ song }) => {
       <h3>{song.artist}</h3>
       <p>{song.lyrics}</p>
       <Delete onClick={deleteMutation}/>
+      {!loading && data && <More songs = {data.songs} />}
     </div>
   )
 
