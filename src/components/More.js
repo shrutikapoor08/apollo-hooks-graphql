@@ -8,7 +8,7 @@ const More = ({ songs }) => {
       <button
         className={"mui-btn mui-btn--fab"}
         onClick={() => setVisible(!visible)}
-      />
+      > ... </button>
       {visible && (
         <div>
           <ul>
