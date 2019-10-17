@@ -1,11 +1,15 @@
-import React  from "react";
+import React from "react";
 
-
-const Delete = (props) => {
+const Delete = props => {
   return (
-    <button type="submit" onClick={props.onClick} className="mui-btn mui-btn--fab">-</button>
-  )
-
+    <button
+      type="submit"
+      onClick={props.onClick}
+      className="mui-btn mui-btn--flat mui-btn--primary"
+    >
+      Delete
+    </button>
+  );
 };
 
-export default Delete
+export default Delete;

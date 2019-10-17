@@ -6,9 +6,11 @@ const More = ({ songs }) => {
   return (
     <Fragment>
       <button
-        className={"mui-btn mui-btn--fab"}
+        className={"mui-btn mui-btn--fab mui-btn--primary"}
         onClick={() => setVisible(!visible)}
-      > ... </button>
+      >
+        +
+      </button>
       {visible && (
         <div>
           <ul>
