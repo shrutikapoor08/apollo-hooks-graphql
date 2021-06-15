@@ -20,9 +20,6 @@ const httpLink = new HttpLink({
 });
 
 const middlewareAuthLink = new ApolloLink((operation, forward) => {
-  const token =
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2ZXJzaW9uIjoxLCJ0b2tlbklkIjoiODQ2YzgxOGMtM2IxYi00ZmM3LThkZDItNjQxYjU1YTdiYWY5In0.17xeTnclFL2y8hXxUkWfuWOdOwQ4QD_bVbqmOYFFQjI";
-
   const authorizationHeader = token ? `Bearer ${token}` : null;
   operation.setContext({
     headers: {
